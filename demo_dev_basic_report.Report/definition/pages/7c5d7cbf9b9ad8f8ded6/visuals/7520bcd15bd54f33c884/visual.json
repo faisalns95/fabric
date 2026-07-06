@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "7520bcd15bd54f33c884",
+  "position": {
+    "x": 60.574088440651664,
+    "y": 370.39565554693559,
+    "z": 1,
+    "height": 338.61908456167572,
+    "width": 1176.7261442979052,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_dim_geography"
+                    }
+                  },
+                  "Property": "county"
+                }
+              },
+              "queryRef": "gold_dim_geography.county",
+              "nativeQueryRef": "county",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "gold_fact_price_paid"
+                        }
+                      },
+                      "Property": "price_amt"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(gold_fact_price_paid.price_amt)",
+              "nativeQueryRef": "Sum of price_amt"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "gold_fact_price_paid"
+                      }
+                    },
+                    "Property": "price_amt"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6a8f4fb50c2af04e98ca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_dim_geography"
+              }
+            },
+            "Property": "county"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1bbf2358027567d83ca0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gold_fact_price_paid"
+                  }
+                },
+                "Property": "price_amt"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

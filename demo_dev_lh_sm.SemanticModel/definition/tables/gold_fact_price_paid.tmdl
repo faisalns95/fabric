@@ -1,0 +1,144 @@
+table gold_fact_price_paid
+	lineageTag: 089f8c19-9413-410a-a22e-3b79931f194d
+	sourceLineageTag: [dbo].[gold_fact_price_paid]
+
+	column transaction_id
+		dataType: string
+		lineageTag: 271b20a1-6715-4b88-94c2-2c31cfaf71e8
+		sourceLineageTag: transaction_id
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: bbc57ac2-7083-473b-bbdf-8efda3a3a7d8
+		sourceLineageTag: date_key
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column geography_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 33a291fd-0f9c-469e-9616-d02e0824d405
+		sourceLineageTag: geography_key
+		summarizeBy: none
+		sourceColumn: geography_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column property_type_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ae12bdcd-06e6-48b1-b991-715b1263ee16
+		sourceLineageTag: property_type_key
+		summarizeBy: none
+		sourceColumn: property_type_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_amt
+		dataType: double
+		lineageTag: 467448f2-06a1-40a0-beb3-7ef9d90bd265
+		sourceLineageTag: price_amt
+		summarizeBy: sum
+		sourceColumn: price_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_band
+		dataType: string
+		lineageTag: 170de0c2-2a67-4127-b945-0bc9603c29ac
+		sourceLineageTag: price_band
+		summarizeBy: none
+		sourceColumn: price_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_new_build
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1d4ccda6-81a7-4051-b1f7-ec47a384097c
+		sourceLineageTag: is_new_build
+		summarizeBy: none
+		sourceColumn: is_new_build
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration
+		dataType: string
+		lineageTag: 9528031d-8d43-471e-b499-b87a9dcfeaf0
+		sourceLineageTag: duration
+		summarizeBy: none
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_desc
+		dataType: string
+		lineageTag: 415c03fd-f3da-49dc-b44b-0b18a1423269
+		sourceLineageTag: duration_desc
+		summarizeBy: none
+		sourceColumn: duration_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column paon
+		dataType: string
+		lineageTag: 964453bc-f0c5-409a-a043-0693578a4289
+		sourceLineageTag: paon
+		summarizeBy: none
+		sourceColumn: paon
+
+		annotation SummarizationSetBy = Automatic
+
+	column saon
+		dataType: string
+		lineageTag: 32a70a57-a1aa-40a8-a22a-0d92338528ce
+		sourceLineageTag: saon
+		summarizeBy: none
+		sourceColumn: saon
+
+		annotation SummarizationSetBy = Automatic
+
+	column street_clean
+		dataType: string
+		lineageTag: 43a2737f-fcac-43cb-bc52-83a70ef38d02
+		sourceLineageTag: street_clean
+		summarizeBy: none
+		sourceColumn: street_clean
+
+		annotation SummarizationSetBy = Automatic
+
+	column ppd_category_type
+		dataType: string
+		lineageTag: 12c071c1-2c0e-49f6-b183-3f5bc20e6549
+		sourceLineageTag: ppd_category_type
+		summarizeBy: none
+		sourceColumn: ppd_category_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column transfer_year
+		dataType: int64
+		formatString: 0
+		lineageTag: b19defad-2d85-4a7f-b1bd-6568dd8c31fa
+		sourceLineageTag: transfer_year
+		summarizeBy: sum
+		sourceColumn: transfer_year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_fact_price_paid = entity
+		mode: directLake
+		source
+			entityName: gold_fact_price_paid
+			schemaName: dbo
+			expressionSource: 'DirectLake - Demo_Dev'
+

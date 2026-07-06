@@ -1,0 +1,66 @@
+table gold_dim_geography
+	lineageTag: a92fc655-4a32-43c0-ac8c-1c0a3ca2d18f
+	sourceLineageTag: [dbo].[gold_dim_geography]
+
+	column district
+		dataType: string
+		lineageTag: 91d276fe-2929-4641-8435-f808367accff
+		sourceLineageTag: district
+		summarizeBy: none
+		sourceColumn: district
+
+		annotation SummarizationSetBy = Automatic
+
+	column county
+		dataType: string
+		lineageTag: 55934a86-5477-4db0-9be2-46a253596efd
+		sourceLineageTag: county
+		summarizeBy: none
+		sourceColumn: county
+
+		annotation SummarizationSetBy = Automatic
+
+	column town_city
+		dataType: string
+		lineageTag: 591f2e2f-5fdc-4286-8f2a-91a1f6d34c9d
+		sourceLineageTag: town_city
+		summarizeBy: none
+		sourceColumn: town_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column postcode
+		dataType: string
+		lineageTag: e1ea24f1-7934-41d3-9538-e0ad263793f7
+		sourceLineageTag: postcode
+		summarizeBy: none
+		sourceColumn: postcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column postcode_area
+		dataType: string
+		lineageTag: 636325f9-f36a-4234-90f1-b35eb27c1c13
+		sourceLineageTag: postcode_area
+		summarizeBy: none
+		sourceColumn: postcode_area
+
+		annotation SummarizationSetBy = Automatic
+
+	column geography_key
+		dataType: int64
+		formatString: 0
+		lineageTag: c42fcec7-ed8c-4989-aa6f-2391ecc5849d
+		sourceLineageTag: geography_key
+		summarizeBy: none
+		sourceColumn: geography_key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_geography = entity
+		mode: directLake
+		source
+			entityName: gold_dim_geography
+			schemaName: dbo
+			expressionSource: 'DirectLake - Demo_Dev'
+

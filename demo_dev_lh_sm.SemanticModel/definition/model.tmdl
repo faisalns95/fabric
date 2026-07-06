@@ -1,0 +1,20 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectLake - Demo_Dev"]
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit"]
+
+ref table gold_fact_price_paid
+ref table gold_dim_geography
+ref table gold_dim_date
+ref table gold_dim_property_type
+ref table gold_mart_avg_price_by_district_year
+

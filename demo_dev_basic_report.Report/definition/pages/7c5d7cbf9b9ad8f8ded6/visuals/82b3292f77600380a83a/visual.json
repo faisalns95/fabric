@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "82b3292f77600380a83a",
+  "position": {
+    "x": 938.40186190845611,
+    "y": 370.39565554693559,
+    "z": 4,
+    "height": 299.89138867339022,
+    "width": 299.89138867339022,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "qnaVisual",
+    "objects": {
+      "hiddenProperties": [
+        {
+          "properties": {
+            "savedUtterance": {
+              "expr": {
+                "Literal": {
+                  "Value": "'price_amt total for district adur'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

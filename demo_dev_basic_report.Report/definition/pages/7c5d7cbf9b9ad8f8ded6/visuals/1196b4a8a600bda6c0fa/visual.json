@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "1196b4a8a600bda6c0fa",
+  "position": {
+    "x": 1008.9061287820015,
+    "y": 0,
+    "z": 3,
+    "height": 340.60512024825442,
+    "width": 221.44297905352985,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_dim_geography"
+                    }
+                  },
+                  "Property": "town_city"
+                }
+              },
+              "queryRef": "gold_dim_geography.town_city",
+              "nativeQueryRef": "town_city",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fbbd4331c07096bb537b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_dim_geography"
+              }
+            },
+            "Property": "town_city"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

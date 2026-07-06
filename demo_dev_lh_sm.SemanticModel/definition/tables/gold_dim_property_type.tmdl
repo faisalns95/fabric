@@ -1,0 +1,39 @@
+table gold_dim_property_type
+	lineageTag: 48ac3a8d-0891-45cd-98df-606342280024
+	sourceLineageTag: [dbo].[gold_dim_property_type]
+
+	column property_type
+		dataType: string
+		lineageTag: b6daec61-6d3e-4cde-83c8-8ec794786ba7
+		sourceLineageTag: property_type
+		summarizeBy: none
+		sourceColumn: property_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column property_type_desc
+		dataType: string
+		lineageTag: 1d88cc51-4b5a-44b2-89ae-7efa29263adb
+		sourceLineageTag: property_type_desc
+		summarizeBy: none
+		sourceColumn: property_type_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column property_type_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d3d2e41-f28f-41b9-b853-5ab76dc8fd02
+		sourceLineageTag: property_type_key
+		summarizeBy: none
+		sourceColumn: property_type_key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_property_type = entity
+		mode: directLake
+		source
+			entityName: gold_dim_property_type
+			schemaName: dbo
+			expressionSource: 'DirectLake - Demo_Dev'
+

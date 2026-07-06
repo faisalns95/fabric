@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "51c81576477b4b608a17",
+  "position": {
+    "x": 542.18774243599682,
+    "y": 20.853374709076803,
+    "z": 2,
+    "height": 339.61210240496507,
+    "width": 474.66252909231963,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_dim_geography"
+                    }
+                  },
+                  "Property": "district"
+                }
+              },
+              "queryRef": "gold_dim_geography.district",
+              "nativeQueryRef": "district"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "gold_fact_price_paid"
+                        }
+                      },
+                      "Property": "price_amt"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(gold_fact_price_paid.price_amt)",
+              "nativeQueryRef": "Sum of price_amt"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5cc9df7b4fde52b7a68e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_dim_geography"
+              }
+            },
+            "Property": "district"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "76b73d0ed35bc135492f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gold_fact_price_paid"
+                  }
+                },
+                "Property": "price_amt"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

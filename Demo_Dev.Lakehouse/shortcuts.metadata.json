@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Demo_MS_Fabric_UK_Postal",
+    "path": "/Files/bronze",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "ef6e44cc-f491-4ace-9f83-d3472ad74d3a",
+        "location": "https://fezdevadls1.dfs.core.windows.net",
+        "subpath": "/samples/Demo_MS_Fabric_UK_Postal"
+      }
+    }
+  }
+]

@@ -1,0 +1,12 @@
+relationship e6f0c779-ec53-d0b1-8fc1-e717ea49df45
+	fromColumn: gold_fact_price_paid.date_key
+	toColumn: gold_dim_date.date_key
+
+relationship 22b92d41-5b09-a5a0-acc6-928294055f40
+	fromColumn: gold_fact_price_paid.geography_key
+	toColumn: gold_dim_geography.geography_key
+
+relationship 40c0145e-7ed0-61f9-2f99-09de94f46f28
+	fromColumn: gold_fact_price_paid.property_type_key
+	toColumn: gold_dim_property_type.property_type_key
+

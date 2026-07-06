@@ -1,0 +1,89 @@
+table gold_dim_date
+	lineageTag: 4d9a5243-5ff4-4b30-b980-b603a1eb8439
+	sourceLineageTag: [dbo].[gold_dim_date]
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ffff8ee-f279-44f8-8748-9c4391627bee
+		sourceLineageTag: date_key
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column transfer_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0529786f-1157-4b2d-898f-65f2d61d6bce
+		sourceLineageTag: transfer_date
+		summarizeBy: none
+		sourceColumn: transfer_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 5daedd01-9017-491d-a206-814377e470fd
+		sourceLineageTag: year
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: bb26cfbc-1bb4-4a78-9c5d-fe883ce64d1d
+		sourceLineageTag: quarter
+		summarizeBy: none
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		lineageTag: b0163799-2fdd-4f52-9d32-072c845bcd2e
+		sourceLineageTag: month
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name
+		dataType: string
+		lineageTag: 4b18922c-6dde-49b8-97a8-2432687c25ab
+		sourceLineageTag: month_name
+		summarizeBy: none
+		sourceColumn: month_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column day
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e9bfeb2-f92c-426f-b438-44681ce0477a
+		sourceLineageTag: day
+		summarizeBy: none
+		sourceColumn: day
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week
+		dataType: string
+		lineageTag: 27f93333-8225-4604-b98c-d6d16b759fde
+		sourceLineageTag: day_of_week
+		summarizeBy: none
+		sourceColumn: day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_date = entity
+		mode: directLake
+		source
+			entityName: gold_dim_date
+			schemaName: dbo
+			expressionSource: 'DirectLake - Demo_Dev'
+
